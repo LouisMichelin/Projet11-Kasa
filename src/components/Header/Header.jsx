@@ -1,14 +1,20 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import LogoBig from "../../assets/logoBig.png";
 
 function Header() {
    return (
       <div className="HeaderWrapper">
-         <h2>HEADER</h2>
-         <div className="NavContainer">
-            <Link to="/">Accueil</Link>
-            <Link to="/1337">404</Link>
-         </div>
+         <img className="HeaderLogo" src={LogoBig} alt="Logo Kasa" />
+         <nav className="NavContainer">
+            <Link className="NavLink" to="/">
+               Accueil
+            </Link>
+
+            <Link className="NavLink" to="/1337">
+               A Propos
+            </Link>
+         </nav>
       </div>
    );
 }
