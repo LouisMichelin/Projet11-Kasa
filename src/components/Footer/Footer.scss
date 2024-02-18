@@ -1,0 +1,19 @@
+.FooterWrapper {
+   background-color: black;
+   height: 210px;
+   width: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.FooterLogo {
+   margin-top: 66px;
+   max-width: 122px;
+}
+
+.Rights {
+   margin-top: 50px;
+   margin-bottom: 30px;
+}
