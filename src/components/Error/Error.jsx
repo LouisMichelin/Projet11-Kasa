@@ -1,3 +1,5 @@
+import "./Error.scss";
+
 function Error() {
    return (
       <div className="ErrorWrapper">
