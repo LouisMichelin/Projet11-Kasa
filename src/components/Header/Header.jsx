@@ -7,19 +7,11 @@ function Header() {
       <div className="HeaderWrapper">
          <img className="HeaderLogo" src={LogoBig} alt="Logo Kasa" />
          <nav className="NavContainer">
-            <Link
-               className="NavLink"
-               to="/"
-               // style={{ textDecoration: "solid" }}
-            >
+            <Link className="NavLink" to="/">
                Accueil
             </Link>
 
-            <Link
-               className="NavLink"
-               to="/1337"
-               // style={{ textDecoration: "solid" }}
-            >
+            <Link className="NavLink" to="/1337">
                A Propos
             </Link>
          </nav>

@@ -1,5 +1,38 @@
 .ErrorWrapper {
    display: flex;
-   justify-content: center;
-   background-color: red;
+   align-items: center;
+   flex-direction: column;
+}
+
+.Error404 {
+   margin: 139px 0;
+   font-weight: 700;
+   color: #ff6060;
+   font-size: 288px;
+   @media (max-width: 1000px) {
+      font-size: 96px;
+      margin: 113px 0;
+   }
+}
+
+.ErrorOups {
+   margin-bottom: 139px;
+   color: #ff6060;
+   font-size: 36px;
+   text-align: center;
+   @media (max-width: 1000px) {
+      font-size: 18px;
+      margin-bottom: 113px;
+      max-width: 260px;
+   }
+}
+
+.ErrorHomeLink {
+   margin-bottom: 139px;
+   color: #000000;
+   font-size: 18px;
+   @media (max-width: 1000px) {
+      font-size: 14px;
+      margin-bottom: 113px;
+   }
 }

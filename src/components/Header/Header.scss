@@ -1,17 +1,17 @@
 .HeaderWrapper {
    width: auto;
-   margin: 45px 100px 50px 100px;
+   margin: 45px 100px 0px 100px;
    display: flex;
    justify-content: space-between;
    color: #c43434;
-   background-color: rgb(209, 209, 209);
+   // background-color: rgb(209, 209, 209);
    @media (max-width: 700px) {
       margin: 20px 19.5px;
    }
 }
 
 .HeaderLogo {
-   @media (max-width: 540px) {
+   @media (max-width: 700px) {
       content: url("../../assets/logoSmall.png");
    }
 }
@@ -21,7 +21,7 @@
    display: flex;
    justify-content: flex-end;
    align-items: center;
-   @media (max-width: 540px) {
+   @media (max-width: 700px) {
       padding-left: 0;
    }
 }
@@ -30,10 +30,10 @@
    text-transform: uppercase;
    padding-left: 50px;
    color: #000000;
-   @media (max-width: 420px) {
+   @media (max-width: 700px) {
       padding-left: 20px;
    }
-   @media (max-width: 540px) {
+   @media (max-width: 700px) {
       font-size: 12px;
    }
 }

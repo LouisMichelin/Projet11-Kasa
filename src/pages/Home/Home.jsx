@@ -4,7 +4,7 @@ function Home() {
    return (
       <div className="HomeWrapper">
          <div>
-            <h2>PAGE ACCUEIL</h2>
+            <h2>PAGE D'ACCUEIL</h2>
          </div>
       </div>
    );
