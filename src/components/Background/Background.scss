@@ -1,0 +1,12 @@
+.BackgroundWrapper {
+   display: flex;
+   justify-content: center;
+   height: 223px;
+   width: 100%;
+}
+
+.BackgroundImage {
+   width: 100%;
+   object-fit: cover;
+   border-radius: 25px;
+}
