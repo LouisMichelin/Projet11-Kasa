@@ -17,21 +17,21 @@
 }
 
 .NavContainer {
-   padding-left: 25px;
+   // margin-left: 25px;
    display: flex;
    justify-content: flex-end;
    align-items: center;
-   @media (max-width: 700px) {
-      padding-left: 0;
-   }
+   // @media (max-width: 800px) {
+   //    margin-left: 0;
+   // }
 }
 
 .NavLink {
    text-transform: uppercase;
-   padding-left: 50px;
+   margin-left: 50px;
    color: #000000;
    @media (max-width: 700px) {
-      padding-left: 20px;
+      margin-left: 20px;
    }
    @media (max-width: 700px) {
       font-size: 12px;
