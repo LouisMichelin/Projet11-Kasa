@@ -1,14 +1,12 @@
 import "./Propos.scss";
 import BackgroundImage from "../../components/Background/Background";
+import MenusApropos from "../../components/MenusApropos/MenusApropos";
 
 function Propos() {
    return (
       <div className="ProposWrapper">
          <BackgroundImage />
-         <div>Fiabilité</div>
-         <div>Respect</div>
-         <div>Service</div>
-         <div>Sécurité</div>
+         <MenusApropos />
       </div>
    );
 }

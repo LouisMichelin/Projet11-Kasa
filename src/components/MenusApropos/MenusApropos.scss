@@ -1,0 +1,43 @@
+.MenuWrapper {
+   display: flex;
+   flex-direction: column;
+   margin-top: 10px;
+   max-width: 1240px;
+   width: 100%;
+}
+
+.MenuButton {
+   border: 0;
+   border-radius: 5px;
+   padding: 0 10px;
+   margin: 30px 100px 0px 100px;
+   height: 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #ff6060;
+   color: white;
+   font-weight: 700;
+   @media (max-width: 900px) {
+      margin: 20px 0px 0px 0px;
+      height: 30px;
+   }
+}
+
+.MenuButton:hover {
+   cursor: pointer;
+}
+
+.MenuTagName {
+   font-weight: 700;
+   font-size: 24px;
+   @media (max-width: 900px) {
+      font-size: 13px;
+   }
+}
+
+.MenuTagArrow {
+   @media (max-width: 900px) {
+      width: 16px;
+   }
+}
