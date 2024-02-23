@@ -1,4 +1,4 @@
-import "./MenusApropos.scss";
+import "./ButtonApropos.scss";
 import ArrowBack from "../../assets/arrowBack.png";
 import { useState } from "react";
 import { aboutList } from "../../data/apropos";
@@ -47,7 +47,6 @@ function ButtonApropos() {
                   className="MenuTagArrow"
                   alt="Flèche vers le haut"
                   src={ArrowBack}
-                  // style={{transformStyle: rotate(180deg)}}
                   style={{
                      transform: "rotate(180deg)",
                      transition: "transform 150ms ease",
@@ -76,7 +75,6 @@ function ButtonApropos() {
                   className="MenuTagArrow"
                   alt="Flèche vers le haut"
                   src={ArrowBack}
-                  // style={{transformStyle: rotate(180deg)}}
                   style={{
                      transform: "rotate(180deg)",
                      transition: "transform 150ms ease",
@@ -105,7 +103,6 @@ function ButtonApropos() {
                   className="MenuTagArrow"
                   alt="Flèche vers le haut"
                   src={ArrowBack}
-                  // style={{transformStyle: rotate(180deg)}}
                   style={{
                      transform: "rotate(180deg)",
                      transition: "transform 150ms ease",
@@ -134,7 +131,6 @@ function ButtonApropos() {
                   className="MenuTagArrow"
                   alt="Flèche vers le haut"
                   src={ArrowBack}
-                  // style={{transformStyle: rotate(180deg)}}
                   style={{
                      transform: "rotate(180deg)",
                      transition: "transform 150ms ease",

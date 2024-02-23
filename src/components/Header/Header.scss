@@ -17,13 +17,9 @@
 }
 
 .NavContainer {
-   // margin-left: 25px;
    display: flex;
    justify-content: flex-end;
    align-items: center;
-   // @media (max-width: 800px) {
-   //    margin-left: 0;
-   // }
 }
 
 .NavLink {
@@ -36,4 +32,8 @@
    @media (max-width: 700px) {
       font-size: 12px;
    }
+}
+.NavLink:link {
+   // text-decoration: underline;
+   text-decoration: none;
 }

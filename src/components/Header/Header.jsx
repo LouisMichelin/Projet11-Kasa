@@ -1,22 +1,48 @@
 import "./Header.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LogoBig from "../../assets/logoBig.png";
 
 function Header() {
+   const location = useLocation();
+
    return (
       <div className="HeaderWrapper">
          <img className="HeaderLogo" src={LogoBig} alt="Logo Kasa" />
          <nav className="NavContainer">
-            <Link className="NavLink" to="/">
-               Accueil
-            </Link>
-
-            <Link className="NavLink" to="/a-propos">
-               A Propos
-            </Link>
-            {/* <Link className="NavLink" to="/1337">
-               404
-            </Link> */}
+            {location.pathname === "/" ? (
+               <Link
+                  className="NavLink"
+                  style={{ textDecoration: "underline" }}
+                  to="/"
+               >
+                  Accueil
+               </Link>
+            ) : (
+               <Link
+                  className="NavLink"
+                  style={{ textDecoration: "none" }}
+                  to="/"
+               >
+                  Accueil
+               </Link>
+            )}
+            {location.pathname === "/a-propos" ? (
+               <Link
+                  className="NavLink"
+                  style={{ textDecoration: "underline" }}
+                  to="/a-propos"
+               >
+                  A Propos
+               </Link>
+            ) : (
+               <Link
+                  className="NavLink"
+                  style={{ textDecoration: "none" }}
+                  to="/a-propos"
+               >
+                  A Propos
+               </Link>
+            )}
          </nav>
       </div>
    );
