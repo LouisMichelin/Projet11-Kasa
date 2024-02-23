@@ -1,5 +1,35 @@
 .HomeWrapper {
-   margin-top: 50px;
+   margin: 40px 100px;
    display: flex;
    justify-content: center;
+   align-items: center;
+   // flex-direction: column;
+   position: relative;
+   height: 223px;
+
+   @media (max-width: 600px) {
+      justify-content: left;
+   }
+   @media (max-width: 700px) {
+      margin: 20px 19.5px;
+      height: 111px;
+   }
+}
+
+.HomeTitle {
+   font-weight: 700;
+   font-size: 48px;
+   border: 1px;
+   position: absolute;
+   color: #ffffff;
+   // mix-blend-mode: overlay;
+   @media (max-width: 600px) {
+      width: 225px;
+   }
+   @media (max-width: 700px) {
+      margin: 20px 19.5px;
+   }
+   @media (max-width: 1000px) {
+      font-size: 24px;
+   }
 }
