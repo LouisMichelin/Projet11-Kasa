@@ -41,9 +41,14 @@
    }
 }
 
-.MenuHiddenDiv {
+.AproposHiddenContent {
    display: flex;
    justify-content: center;
-   background-color: yellow;
    margin: 0px 100px;
+   padding: 0px 10px;
+   @media (max-width: 1000px) {
+      margin: 0;
+      // text-align: justify;
+      font-size: 13px;
+   }
 }
