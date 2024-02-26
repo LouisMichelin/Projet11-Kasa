@@ -6,9 +6,8 @@ import { aboutList } from "../../data/apropos";
 import { useState } from "react";
 
 function Propos() {
-   const [isShown, setIsShown] = useState(false);
-   function handleClick() {
-      setIsShown(!isShown);
+   function test2() {
+      return alert("LOL");
    }
 
    return (
@@ -18,19 +17,28 @@ function Propos() {
             imageAlt="Banner à propos"
             text=""
          />
-         <div className="MenuWrapper">
-            {aboutList.map(({ id, title, content }) => (
-               <>
-                  <Collapse title={title} onClick={handleClick} />
+         <>
+            <div className="MenuWrapper" key={aboutList[0].id}>
+               <Collapse title={aboutList[0].title} lol={test2} />
+               <div
+                  className="AproposHiddenContent"
+                  // style={isShown ? { display: "flex" } : { display: "none" }}
+               >
+                  {aboutList[0].content}
+               </div>
+            </div>
+            {/* {aboutList.map(({ id, title, content }) => (
+               <div className="MenuWrapper" key={id}>
+                  <Collapse title={title} />
                   <div
-                     style={isShown ? { display: "none" } : { display: "flex" }}
                      className="AproposHiddenContent"
+                     // style={isShown ? { display: "flex" } : { display: "none" }}
                   >
                      {content}
                   </div>
-               </>
-            ))}
-         </div>
+               </div>
+            ))} */}
+         </>
       </div>
    );
 }
