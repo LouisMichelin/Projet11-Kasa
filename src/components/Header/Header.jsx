@@ -9,23 +9,18 @@ function Header() {
       <div className="HeaderWrapper">
          <img className="HeaderLogo" src={LogoBig} alt="Logo Kasa" />
          <nav className="NavContainer">
-            {location.pathname === "/" ? (
-               <Link
-                  className="NavLink"
-                  style={{ textDecoration: "underline" }}
-                  to="/"
-               >
-                  Accueil
-               </Link>
-            ) : (
-               <Link
-                  className="NavLink"
-                  style={{ textDecoration: "none" }}
-                  to="/"
-               >
-                  Accueil
-               </Link>
-            )}
+            <Link
+               className="NavLink"
+               style={
+                  location.pathname === "/"
+                     ? { textDecoration: "underline" }
+                     : { textDecoration: "none" }
+               }
+               to="/"
+            >
+               Accueil
+            </Link>
+
             {location.pathname === "/a-propos" ? (
                <Link
                   className="NavLink"

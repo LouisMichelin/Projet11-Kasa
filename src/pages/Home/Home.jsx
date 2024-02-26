@@ -1,12 +1,17 @@
 import "./Home.scss";
-import BackgroundImage from "../../components/Background/Background";
+
+import ImageAccueil from "../../assets/imageAccueil.png";
+import BannerImage from "../../components/Banner/Banner";
 
 function Home() {
    return (
-      <figure className="HomeWrapper">
-         <h2 className="HomeTitle">Chez-vous, partout et ailleurs</h2>
-         <BackgroundImage />
-      </figure>
+      <div>
+         <BannerImage
+            imageSrc={ImageAccueil}
+            imageAlt="Banner à propos"
+            text="Chez-vous, partout et ailleurs"
+         />
+      </div>
    );
 }
 

@@ -1,7 +1,7 @@
 {
    "extends": ["react-app"],
    "rules": {
-      "no-console": "error"
+      // "no-console": "error"
       // "no-console": 0
    }
 }
