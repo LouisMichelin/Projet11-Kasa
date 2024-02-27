@@ -1,9 +1,9 @@
 import "./Collapse.scss";
 import ArrowBack from "../../assets/arrowBack.png";
 
-function Collapse({ id, title, lol }) {
+function Collapse({ id, title, showHidden }) {
    return (
-      <button key={id} className="MenuButton" onClick={lol}>
+      <button key={id} className="MenuButton" onClick={showHidden}>
          <div className="MenuTagName">{title}</div>
          <img
             className="MenuTagArrow"
