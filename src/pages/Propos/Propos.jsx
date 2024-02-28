@@ -6,9 +6,17 @@ import { aboutList } from "../../data/apropos";
 import { useState } from "react";
 
 function Propos() {
-   function showHidden(id) {
-      alert(`oui c'est responsive ${id}`);
-   }
+   // const [contentStatus, setcontentStatus] = useState([
+   //    false,
+   //    false,
+   //    false,
+   //    false,
+   // ]);
+
+   const showHidden = (contentStatus) => {
+      alert(`${contentStatus}`);
+      return !contentStatus;
+   };
 
    return (
       <div className="ProposWrapper">
@@ -22,9 +30,10 @@ function Propos() {
             <Collapse
                key={id}
                title={title}
-               content={content}
-               showHidden={() => showHidden(id)}
-               isShown={false}
+               contentStatus={false}
+               afficher={showHidden}
+               contentStyle={{ display: "flex" }}
+               hiddenContent={content}
             />
          ))}
       </div>
