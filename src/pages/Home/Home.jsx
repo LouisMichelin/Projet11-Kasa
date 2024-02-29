@@ -5,7 +5,7 @@ import BannerImage from "../../components/Banner/Banner";
 
 function Home() {
    return (
-      <div>
+      <div className="HomeWrapper">
          <BannerImage
             imageSrc={ImageAccueil}
             imageAlt="Banner à propos"
