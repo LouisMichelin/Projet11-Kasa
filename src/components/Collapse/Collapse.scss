@@ -1,10 +1,8 @@
 .MenuWrapper {
    display: flex;
    flex-direction: column;
-   // margin-top: 10px;
    width: 100%;
 }
-
 .MenuButton {
    border: 0;
    border-radius: 5px;
@@ -22,11 +20,9 @@
       height: 30px;
    }
 }
-
 .MenuButton:hover {
    cursor: pointer;
 }
-
 .MenuTagName {
    font-weight: 700;
    font-size: 24px;
@@ -34,13 +30,11 @@
       font-size: 13px;
    }
 }
-
 .MenuTagArrow {
    @media (max-width: 975px) {
       width: 16px;
    }
 }
-
 .AproposHiddenContent {
    display: flex;
    justify-content: center;
@@ -48,7 +42,6 @@
    padding: 0px 10px;
    @media (max-width: 975px) {
       margin: 0;
-      // text-align: justify;
       font-size: 13px;
    }
 }
