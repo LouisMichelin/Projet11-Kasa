@@ -2,39 +2,27 @@ import "./Collapse.scss";
 import ArrowBack from "../../assets/arrowBack.png";
 import { useState } from "react";
 
-function Collapse({
-   id,
-   title,
-   hiddenContent,
-   afficher,
-   contentStyle,
-   contentStatus,
-}) {
-   // const [contentStatus, setcontentStatus] = useState(false);
-   // const [isShown, setIsShown] = useState([false, false, false, false]);
+function Collapse({ id, title, hiddenContent }) {
+   const [isShown, setIsShown] = useState(false);
 
-   // function showHidden(id) {
-   //    setIsShown(!isShown[id]);
-   //    alert(`Hello World ${id}, Statut = ${isShown[id]} vs ${isShown[id]} `);
-   // }
+   function showHidden() {
+      setIsShown(!isShown);
+   }
 
    return (
       <div key={id} className="MenuWrapper">
-         <button key={id} id={id} className="MenuButton" onClick={afficher}>
+         <button key={id} id={id} className="MenuButton" onClick={showHidden}>
             <div className="MenuTagName">{title}</div>
             <img
                className="MenuTagArrow"
                alt="Flèche vers le haut"
                src={ArrowBack}
+               style={isShown ? { transform: "rotate(180deg)" } : null}
             />
          </button>
-         <div
-            className="AproposHiddenContent"
-            style={contentStyle}
-            contentStatus={true}
-         >
-            {contentStatus ? { hiddenContent } : null}
-         </div>
+         {isShown ? (
+            <div className="AproposHiddenContent">{hiddenContent}</div>
+         ) : null}
       </div>
    );
 }
