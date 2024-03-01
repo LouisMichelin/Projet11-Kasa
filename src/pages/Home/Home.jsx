@@ -11,6 +11,9 @@ function Home() {
             imageAlt="Banner à propos"
             text="Chez-vous, partout et ailleurs"
          />
+         <div className="CardWrapper">
+            <Card />
+         </div>
       </div>
    );
 }

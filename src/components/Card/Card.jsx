@@ -1,7 +1,7 @@
 import "./Card.scss";
 
 function Card() {
-   return <div className="CardWrapper"></div>;
+   return <div>Hello World</div>;
 }
 
 export default Card;

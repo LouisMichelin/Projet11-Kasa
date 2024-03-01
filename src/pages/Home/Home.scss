@@ -3,13 +3,26 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   flex-direction: column;
    position: relative;
-   height: 223px;
+   // min-height: 223px;
 
    @media (max-width: 700px) {
       margin: 20px 19.5px;
    }
    @media (max-width: 975px) {
       height: 111px;
+   }
+}
+
+.CardWrapper {
+   border-radius: 25px;
+   margin: 40px 100px 0px 100px;
+   background-color: yellow;
+   width: calc(100% - 50px);
+   height: 500px;
+   padding: 25px;
+   @media (max-width: 700px) {
+      margin: 20px 19.5px;
    }
 }
