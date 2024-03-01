@@ -1,1 +1,39 @@
-
+.CardStructure {
+   background-color: #ff6060;
+   width: 340px;
+   height: 340px;
+   border-radius: 15px;
+   display: flex;
+   margin: 25px;
+   @media (max-width: 700px) {
+      width: 335px;
+      height: 255px;
+      margin: 10px 0px;
+   }
+}
+.CardStructure:hover {
+   cursor: pointer;
+}
+.CardImage {
+   display: flex;
+   object-fit: cover;
+   width: 340px;
+   max-height: calc(100% - 74px);
+   border-radius: 10px 10px 0px 0px;
+   @media (max-width: 700px) {
+   }
+}
+.CardTitle {
+   display: flex;
+   align-self: flex-end;
+   align-items: center;
+   max-width: 300px;
+   height: 52px;
+   position: absolute;
+   margin: 10px 20px;
+   color: #ffffff;
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 1.5;
+   word-spacing: 3px;
+}
