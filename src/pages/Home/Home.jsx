@@ -1,7 +1,7 @@
 import "./Home.scss";
-
 import ImageAccueil from "../../assets/imageAccueil.png";
 import BannerImage from "../../components/Banner/Banner";
+import Card from "../../components/Card/Card";
 
 function Home() {
    return (

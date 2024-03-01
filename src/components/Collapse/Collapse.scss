@@ -20,9 +20,6 @@
       height: 30px;
    }
 }
-.MenuButton:hover {
-   cursor: pointer;
-}
 .MenuTagName {
    font-weight: 700;
    font-size: 24px;
@@ -35,11 +32,21 @@
       width: 16px;
    }
 }
+.MenuTagArrow:hover {
+   cursor: pointer;
+}
 .AproposHiddenContent {
+   padding: 10px 15px 10px 20px;
+   line-height: 1.5;
+   align-items: center;
+   border-radius: 5px;
+   min-height: 75px;
+   background-color: #f6f6f6;
    display: flex;
-   justify-content: center;
+   justify-content: left;
    margin: 0px 100px;
-   padding: 0px 10px;
+   text-align: left;
+   // padding: 0px 10px;
    @media (max-width: 975px) {
       margin: 0;
       font-size: 13px;

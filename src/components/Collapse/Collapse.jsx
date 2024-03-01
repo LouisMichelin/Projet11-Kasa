@@ -11,13 +11,14 @@ function Collapse({ id, title, hiddenContent }) {
 
    return (
       <div key={id} className="MenuWrapper">
-         <button key={id} id={id} className="MenuButton" onClick={showHidden}>
+         <button key={id} id={id} className="MenuButton">
             <div className="MenuTagName">{title}</div>
             <img
                className="MenuTagArrow"
                alt="Flèche vers le haut"
                src={ArrowBack}
                style={isShown ? { transform: "rotate(180deg)" } : null}
+               onClick={showHidden}
             />
          </button>
          {isShown ? (
