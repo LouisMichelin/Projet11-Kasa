@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Footer from "./components/Footer/Footer";
 import Error from "./components/Error/Error";
 import Propos from "./pages/Propos/Propos";
+import Logement from "./pages/Logement/Logement";
 
 ReactDOM.render(
    <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.render(
             <Route path="/" element={<Home />} />
             <Route path="/a-propos" element={<Propos />} />
             <Route path="*" element={<Error />} />
+            <Route path="/logement" element={<Logement />} />
          </Routes>
       </Router>
       <Footer />

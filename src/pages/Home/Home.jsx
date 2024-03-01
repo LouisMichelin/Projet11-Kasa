@@ -2,9 +2,12 @@ import "./Home.scss";
 import ImageAccueil from "../../assets/imageAccueil.png";
 import BannerImage from "../../components/Banner/Banner";
 import Card from "../../components/Card/Card";
-import Logements from "../../data/logements.json";
+import ListeLogements from "../../data/logements";
 
 function Home() {
+   function test123(valeurDefinie, index) {
+      alert(`L'unique ID = ${valeurDefinie} & son index = ${index}`);
+   }
    return (
       <div className="HomeWrapper">
          <BannerImage
@@ -13,17 +16,16 @@ function Home() {
             text="Chez-vous, partout et ailleurs"
          />
          <div className="CardWrapper">
-            {/*----------------------------------------------*/}
-            {/*!!!!!!!!!!!!!! LE CODE EST BON !!!!!!!!!!!!!! */}
-            {Logements.map(({ id, title, cover }) => (
+            {ListeLogements.map(({ id, title, cover }, index) => (
                <Card
                   key={id}
                   title={title}
                   cardImageAlt={title}
                   cardImageSrc={cover}
+                  // index={title}
+                  handleClick={() => test123(id, index)}
                />
             ))}
-            {/*----------------------------------------------*/}
          </div>
       </div>
    );
