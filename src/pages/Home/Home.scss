@@ -5,13 +5,8 @@
    align-items: center;
    flex-direction: column;
    position: relative;
-   // min-height: 223px;
-
    @media (max-width: 700px) {
       margin: 20px 19.5px;
-   }
-   @media (max-width: 975px) {
-      height: 111px;
    }
 }
 
@@ -22,7 +17,7 @@
    width: calc(100% - 50px);
    height: 500px;
    padding: 25px;
-   @media (max-width: 700px) {
-      margin: 20px 19.5px;
+   @media (max-width: 975px) {
+      margin-top: 20px;
    }
 }
