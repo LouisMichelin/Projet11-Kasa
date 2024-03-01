@@ -4,10 +4,13 @@ import BannerImage from "../../components/Banner/Banner";
 import Card from "../../components/Card/Card";
 import ListeLogements from "../../data/logements";
 
+import { useParams } from "react-router-dom";
+
 function Home() {
    function test123(valeurDefinie, index) {
       alert(`L'unique ID = ${valeurDefinie} & son index = ${index}`);
    }
+   const { index } = useParams();
    return (
       <div className="HomeWrapper">
          <BannerImage
@@ -22,8 +25,8 @@ function Home() {
                   title={title}
                   cardImageAlt={title}
                   cardImageSrc={cover}
-                  // index={title}
                   handleClick={() => test123(id, index)}
+                  pageIndex={`/logement/${index}`}
                />
             ))}
          </div>
