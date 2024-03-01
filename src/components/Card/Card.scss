@@ -2,7 +2,7 @@
    background-color: #ff6060;
    width: 340px;
    height: 340px;
-   border-radius: 15px;
+   border-radius: 15px 15px 10px 10px;
    display: flex;
    margin: 25px;
    @media (max-width: 700px) {
@@ -27,7 +27,7 @@
    display: flex;
    align-self: flex-end;
    align-items: center;
-   max-width: 300px;
+   max-width: 260px;
    height: 52px;
    position: absolute;
    margin: 10px 20px;
