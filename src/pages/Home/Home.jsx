@@ -5,9 +5,6 @@ import Card from "../../components/Card/Card";
 import ListeLogements from "../../data/logements";
 
 function Home() {
-   function test123(valeurDefinie, index) {
-      alert(`L'unique ID = ${valeurDefinie} & son index = ${index}`);
-   }
    return (
       <div className="HomeWrapper">
          <BannerImage
@@ -22,7 +19,6 @@ function Home() {
                   title={title}
                   cardImageAlt={title}
                   cardImageSrc={cover}
-                  handleClick={() => test123(id, index)}
                   pageIndex={`/logement/${index}`}
                />
             ))}

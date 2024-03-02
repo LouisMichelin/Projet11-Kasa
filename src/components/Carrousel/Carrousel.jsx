@@ -1,34 +1,38 @@
 import "./Carrousel.scss";
-// import { useParams } from "react-router-dom";
 import ArrowLeft from "../../assets/arrowLeft.png";
 import ArrowRight from "../../assets/arrowRight.png";
 
-function Carrousel({ carrouselImgSrc }) {
-   function lolTest(text) {
-      alert(`AHAHA ça marche ${text}`);
-   }
-   // const { index } = useParams();
-
+function Carrousel({
+   carrouselImgSrc,
+   selectedImg,
+   totalImg,
+   toggleArrowLeft,
+   toggleArrowRight,
+}) {
    return (
       <div className="CarrouselWrapper">
-         {/* <div>JE SUIS UN CARROUSEL & Mon index = {index}</div> */}
-         <img
-            className="CarrouselArrowLeft"
-            src={ArrowLeft}
-            alt="Flèche directionnelle Gauche"
-            onClick={() => lolTest("gauche")}
-         />
+         {selectedImg === 1 ? null : (
+            <img
+               className="CarrouselArrowLeft"
+               src={ArrowLeft}
+               alt="Flèche directionnelle Gauche"
+               onClick={() => toggleArrowLeft()}
+            />
+         )}
          <img
             className="CarrouselImage"
             src={carrouselImgSrc}
             alt="Carrousel"
          />
-         <img
-            className="CarrouselArrowRight"
-            src={ArrowRight}
-            alt="Flèche directionnelle Droite"
-            onClick={() => lolTest("droite")}
-         />
+         {selectedImg === totalImg ? null : (
+            <img
+               className="CarrouselArrowRight"
+               src={ArrowRight}
+               alt="Flèche directionnelle Droite"
+               onClick={() => toggleArrowRight()}
+            />
+         )}
+         <div className="CarrouselCompteur">{`${selectedImg}/${totalImg}`}</div>
       </div>
    );
 }
