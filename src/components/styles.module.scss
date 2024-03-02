@@ -57,3 +57,55 @@
 //////////////////////////////////////////////////////////////////////////////
 /// VERSION LOGEMENT.JSX
 //////////////////////////////////////////////////////////////////////////////
+.LogementMenuWrapper {
+   display: flex;
+   flex-direction: column;
+}
+.LogementMenuButton {
+   border: 0;
+   border-radius: 5px;
+   padding: 0 10px;
+   margin: 30px 100px 0px 100px;
+   height: 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #ff6060;
+   color: white;
+   font-weight: 700;
+   @media (max-width: 975px) {
+      margin: 20px 0px 0px 0px;
+      height: 30px;
+   }
+}
+.LogementMenuTagName {
+   font-weight: 700;
+   font-size: 24px;
+   @media (max-width: 975px) {
+      font-size: 13px;
+   }
+}
+.LogementMenuTagArrow {
+   @media (max-width: 975px) {
+      width: 16px;
+   }
+}
+.LogementMenuTagArrow:hover {
+   cursor: pointer;
+}
+.LogementAproposHiddenContent {
+   padding: 10px 15px 10px 20px;
+   line-height: 1.5;
+   align-items: center;
+   border-radius: 5px;
+   min-height: 75px;
+   background-color: #f6f6f671;
+   display: flex;
+   justify-content: left;
+   margin: 0px 100px;
+   text-align: left;
+   @media (max-width: 975px) {
+      margin: 0;
+      font-size: 13px;
+   }
+}

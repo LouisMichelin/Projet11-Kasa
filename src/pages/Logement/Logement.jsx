@@ -9,10 +9,17 @@ import Host from "../../components/Host/Host";
 import Collapse from "../../components/Collapse/Collapse";
 
 function Logement() {
+   // style1 = styles.LogementMenuWrapper;
+   // style2 = styles.LogementMenuButton;
+   // style3 = styles.LogementMenuTagName;
+   // style4 = styles.LogementMenuTagArrow;
+   // style5 = styles.LogementAproposHiddenContent;
+
    const { index } = useParams();
    const [currentIndex, setCurrentIndex] = useState(0);
    let lastImg = parseInt(ListeLogements[index].pictures.length);
    let selectedLogement = ListeLogements[index];
+
    function handleClickLeft() {
       if (currentIndex > 0) {
          return setCurrentIndex(currentIndex - 1);
@@ -55,7 +62,7 @@ function Logement() {
                hiddenContent={selectedLogement.description}
             />
             <Collapse
-               className
+               className={styles.LogementMenuWrapper}
                title="Equipements"
                hiddenContent={selectedLogement.equipments}
             />
