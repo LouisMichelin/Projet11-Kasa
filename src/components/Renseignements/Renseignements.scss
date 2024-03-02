@@ -1,0 +1,26 @@
+.RenseignementsWrapper {
+   width: 100%;
+   background-color: cyan;
+}
+
+.RenseignementTagsContainer {
+   display: flex;
+   flex-direction: row;
+   margin-left: -10px;
+   margin-top: 20px;
+   max-width: 500px;
+}
+
+.RenseignementTag {
+   background-color: #ff6060;
+   margin: 0 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   width: 150px;
+   height: 25px;
+   color: #ffffff;
+   font-weight: 700;
+   font-size: 14px;
+}

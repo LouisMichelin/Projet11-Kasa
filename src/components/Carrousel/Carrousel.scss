@@ -11,6 +11,7 @@
       margin: 5px 20px 15px 20px;
       width: calc(100% - 40px);
       height: 255px;
+      border-radius: 10px;
    }
 }
 .CarrouselImage {
@@ -19,6 +20,9 @@
    height: 100%;
    width: 100%;
    border-radius: 25px;
+   @media (max-width: 700px) {
+      border-radius: 10px;
+   }
 }
 .CarrouselArrowLeft {
    left: 25px;

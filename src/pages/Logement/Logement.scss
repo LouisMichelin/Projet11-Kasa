@@ -4,3 +4,29 @@
    justify-content: center;
    flex-direction: column;
 }
+.LogementExplications {
+   display: flex;
+   flex-direction: row;
+   height: 100px;
+   width: calc(100% - 200px);
+   @media (max-width: 700px) {
+      flex-direction: column;
+      width: calc(100% - 40px);
+   }
+}
+.LogementHost {
+   background-color: green;
+   width: 200px;
+}
+
+.LogementCollapses {
+   background-color: yellow;
+   display: flex;
+   flex-direction: row;
+   height: 100px;
+
+   @media (max-width: 700px) {
+      flex-direction: column;
+      width: calc(100% - 40px);
+   }
+}
