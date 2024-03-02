@@ -1,9 +1,6 @@
 .RenseignementsWrapper {
-   height: 125px;
    width: 100%;
-   background-color: cyan;
 }
-
 .RenseignementTitle {
    color: #ff6060;
    font-size: 36px;
@@ -12,6 +9,7 @@
 .RenseignementLocation {
    color: black;
    font-size: 18px;
+   margin: 10px 0px 5px 0px;
 }
 
 .RenseignementTagsContainer {
@@ -25,12 +23,12 @@
 
 .RenseignementTag {
    background-color: #ff6060;
-   margin: 0 10px;
+   margin: 0 5px;
    display: flex;
    justify-content: center;
    align-items: center;
    border-radius: 10px;
-   width: 150px;
+   min-width: 115px;
    height: 25px;
    color: #ffffff;
    font-weight: 700;

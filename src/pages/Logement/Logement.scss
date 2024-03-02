@@ -7,16 +7,19 @@
 .LogementExplications {
    display: flex;
    flex-direction: row;
-   height: 200px;
+   min-height: 143px;
    width: calc(100% - 200px);
    @media (max-width: 700px) {
-      flex-direction: column;
       width: calc(100% - 40px);
+   }
+   @media (max-width: 900px) {
+      flex-direction: column;
    }
 }
 .LogementHost {
    display: flex;
    background-color: green;
+   flex-direction: column;
 }
 
 .LogementCollapses {
