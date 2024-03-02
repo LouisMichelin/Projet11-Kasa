@@ -5,6 +5,7 @@ import Renseignements from "../../components/Renseignements/Renseignements";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Host from "../../components/Host/Host";
+import Collapse from "../../components/Collapse/Collapse";
 
 function Logement() {
    const { index } = useParams();
@@ -38,12 +39,22 @@ function Logement() {
                cle={selectedLogement.id}
             />
             <div className="LogementHost">
-               <Host />
+               <Host
+                  nomPrenom={selectedLogement.host.name}
+                  hostPhotoSrc={selectedLogement.host.picture}
+                  rating={selectedLogement.rating}
+               />
             </div>
          </div>
          <div className="LogementCollapses">
-            <div>BOUTON1</div>
-            <div>BOUTON2</div>
+            <Collapse
+               title="Description"
+               hiddenContent={selectedLogement.description}
+            />
+            <Collapse
+               title="Equipements"
+               hiddenContent={selectedLogement.equipments}
+            />
          </div>
       </div>
    );

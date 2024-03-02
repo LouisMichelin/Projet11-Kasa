@@ -1,2 +1,29 @@
-.HostWrapper {
+.HostProfile {
+   display: flex;
+   justify-content: right;
+   height: 65px;
+   width: 200px;
+}
+
+.HostNomPrenom {
+   display: flex;
+   align-items: center;
+   color: #ff6060;
+   text-align: right;
+   font-size: 18px;
+}
+.HostPhoto {
+   display: flex;
+   justify-content: end;
+   border-radius: 90px;
+   height: 65px;
+   width: 65px;
+   margin-left: 10px;
+}
+
+.HostRating {
+   margin-top: 20px;
+   width: 200px;
+   display: flex;
+   justify-content: space-evenly;
 }

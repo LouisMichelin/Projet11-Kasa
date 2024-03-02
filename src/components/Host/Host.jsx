@@ -1,11 +1,26 @@
 import "./Host.scss";
+import StarActive from "../../assets/starActive.png";
+import StarInactive from "../../assets/starInactive.png";
 
-function Host() {
+function Host({ nomPrenom, hostPhotoSrc, rating }) {
    return (
-      <div className="HostWrapper">
-         <div>JE SUIS LA PHOTO & LE PRENOM</div>
-         <div>JE SUIS LE RATING</div>
-      </div>
+      <>
+         <div className="HostProfile">
+            <div className="HostNomPrenom">{nomPrenom}</div>
+            <img
+               className="HostPhoto"
+               src={hostPhotoSrc}
+               alt="Profil de l'hôte"
+            />
+         </div>
+         <div className="HostRating">
+            <img src={rating >= 1 ? StarActive : StarInactive} alt="Rating" />
+            <img src={rating >= 2 ? StarActive : StarInactive} alt="Rating" />
+            <img src={rating >= 3 ? StarActive : StarInactive} alt="Rating" />
+            <img src={rating >= 4 ? StarActive : StarInactive} alt="Rating" />
+            <img src={rating >= 5 ? StarActive : StarInactive} alt="Rating" />
+         </div>
+      </>
    );
 }
 
