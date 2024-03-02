@@ -1,6 +1,7 @@
-import "./Collapse.scss";
+// import "./Collapse.scss";
 import ArrowBack from "../../assets/arrowBack.png";
 import { useState } from "react";
+import styles from "../../components/styles.module.scss";
 
 function Collapse({ id, title, hiddenContent }) {
    const [isShown, setIsShown] = useState(false);
@@ -10,19 +11,19 @@ function Collapse({ id, title, hiddenContent }) {
    }
 
    return (
-      <div key={id} className="MenuWrapper">
-         <button key={id} id={id} className="MenuButton">
-            <div className="MenuTagName">{title}</div>
+      <div key={id} className={styles.MenuWrapper}>
+         <div key={id} id={id} className={styles.MenuButton}>
+            <div className={styles.MenuTagName}>{title}</div>
             <img
-               className="MenuTagArrow"
+               className={styles.MenuTagArrow}
                alt="Flèche vers le haut"
                src={ArrowBack}
                style={isShown ? { transform: "rotate(180deg)" } : null}
                onClick={showHidden}
             />
-         </button>
+         </div>
          {isShown ? (
-            <div className="AproposHiddenContent">{hiddenContent}</div>
+            <div className={styles.AproposHiddenContent}>{hiddenContent}</div>
          ) : null}
       </div>
    );

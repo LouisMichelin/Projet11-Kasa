@@ -3,6 +3,10 @@
    justify-content: right;
    height: 65px;
    width: 200px;
+   align-items: center;
+   @media (max-width: 500px) {
+      height: 30px;
+   }
 }
 
 .HostNomPrenom {
@@ -11,6 +15,10 @@
    color: #ff6060;
    text-align: right;
    font-size: 18px;
+   @media (max-width: 500px) {
+      font-size: 12px;
+      width: 93px;
+   }
 }
 .HostPhoto {
    display: flex;
@@ -19,11 +27,25 @@
    height: 65px;
    width: 65px;
    margin-left: 10px;
+   @media (max-width: 500px) {
+      height: 32px;
+      width: 32px;
+   }
 }
-
 .HostRating {
    margin-top: 20px;
    width: 200px;
    display: flex;
-   justify-content: space-evenly;
+   justify-content: space-between;
+   @media (max-width: 500px) {
+      margin-top: 0px;
+      width: 90px;
+   }
+}
+
+.HostStars {
+   @media (max-width: 500px) {
+      height: 18px;
+      width: 18px;
+   }
 }

@@ -14,11 +14,31 @@ function Host({ nomPrenom, hostPhotoSrc, rating }) {
             />
          </div>
          <div className="HostRating">
-            <img src={rating >= 1 ? StarActive : StarInactive} alt="Rating" />
-            <img src={rating >= 2 ? StarActive : StarInactive} alt="Rating" />
-            <img src={rating >= 3 ? StarActive : StarInactive} alt="Rating" />
-            <img src={rating >= 4 ? StarActive : StarInactive} alt="Rating" />
-            <img src={rating >= 5 ? StarActive : StarInactive} alt="Rating" />
+            <img
+               className="HostStars"
+               src={rating >= 1 ? StarActive : StarInactive}
+               alt="Rating"
+            />
+            <img
+               className="HostStars"
+               src={rating >= 2 ? StarActive : StarInactive}
+               alt="Rating"
+            />
+            <img
+               className="HostStars"
+               src={rating >= 3 ? StarActive : StarInactive}
+               alt="Rating"
+            />
+            <img
+               className="HostStars"
+               src={rating >= 4 ? StarActive : StarInactive}
+               alt="Rating"
+            />
+            <img
+               className="HostStars"
+               src={rating >= 5 ? StarActive : StarInactive}
+               alt="Rating"
+            />
          </div>
       </>
    );

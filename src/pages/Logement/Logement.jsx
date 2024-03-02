@@ -1,4 +1,5 @@
 import "./Logement.scss";
+import styles from "../../components/styles.module.scss";
 import ListeLogements from "../../data/logements";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Renseignements from "../../components/Renseignements/Renseignements";
@@ -22,6 +23,7 @@ function Logement() {
          return setCurrentIndex(currentIndex + 1);
       }
    }
+
    return (
       <div className="LogementWrapper" key={selectedLogement.id}>
          <Carrousel
@@ -48,10 +50,12 @@ function Logement() {
          </div>
          <div className="LogementCollapses">
             <Collapse
+               className
                title="Description"
                hiddenContent={selectedLogement.description}
             />
             <Collapse
+               className
                title="Equipements"
                hiddenContent={selectedLogement.equipments}
             />
