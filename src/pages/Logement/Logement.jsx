@@ -23,23 +23,28 @@ function Logement() {
    }
 
    return (
-      <div className="LogementWrapper">
+      <div className="LogementWrapper" key={selectedLogement.id}>
          <Carrousel
             carrouselImgSrc={selectedLogement.pictures[currentIndex]}
             selectedImg={currentIndex + 1}
             totalImg={lastImg}
             toggleArrowLeft={() => handleClickLeft()}
             toggleArrowRight={() => handleClickRight()}
+            // cle={selectedLogement.id}
          />
          <div className="LogementExplications">
             <Renseignements
                logementTitle={selectedLogement.title}
                logementLocation={selectedLogement.location}
                allTags={selectedLogement.tags}
+               cle={selectedLogement.id}
             />
             <div className="LogementHost">Proprio (A FAIRE EN COMPONENT)</div>
          </div>
-         <div className="LogementCollapses">2</div>
+         <div className="LogementCollapses">
+            <div>BOUTON1</div>
+            <div>BOUTON2</div>
+         </div>
       </div>
    );
 }

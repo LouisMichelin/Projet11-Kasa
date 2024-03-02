@@ -8,9 +8,10 @@ function Carrousel({
    totalImg,
    toggleArrowLeft,
    toggleArrowRight,
+   cle,
 }) {
    return (
-      <div className="CarrouselWrapper">
+      <div className="CarrouselWrapper" key={cle}>
          <img
             className="CarrouselArrowLeft"
             src={ArrowLeft}
