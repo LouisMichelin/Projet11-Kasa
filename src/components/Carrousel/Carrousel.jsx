@@ -11,27 +11,39 @@ function Carrousel({
 }) {
    return (
       <div className="CarrouselWrapper">
-         {selectedImg === 1 ? null : (
+         <img
+            className="CarrouselArrowLeft"
+            src={ArrowLeft}
+            alt="Flèche directionnelle Gauche"
+            onClick={() => toggleArrowLeft()}
+         />
+         {/* {selectedImg === 1 ? null : (
             <img
                className="CarrouselArrowLeft"
                src={ArrowLeft}
                alt="Flèche directionnelle Gauche"
                onClick={() => toggleArrowLeft()}
             />
-         )}
+         )} */}
          <img
             className="CarrouselImage"
             src={carrouselImgSrc}
             alt="Carrousel"
          />
-         {selectedImg === totalImg ? null : (
+         <img
+            className="CarrouselArrowRight"
+            src={ArrowRight}
+            alt="Flèche directionnelle Droite"
+            onClick={() => toggleArrowRight()}
+         />
+         {/* {selectedImg === totalImg ? null : (
             <img
                className="CarrouselArrowRight"
                src={ArrowRight}
                alt="Flèche directionnelle Droite"
                onClick={() => toggleArrowRight()}
             />
-         )}
+         )} */}
          <div className="CarrouselCompteur">{`${selectedImg}/${totalImg}`}</div>
       </div>
    );
