@@ -33,12 +33,19 @@
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   align-items: center;
-   max-height: 52px;
+   // align-items: center;
    width: calc(100% - 200px);
+   margin: 10px 0px 50px 0px;
    // margin-top: 25px;
    @media (max-width: 700px) {
-      flex-direction: column;
       width: calc(100% - 40px);
+      margin-bottom: 15px;
+   }
+   @media (max-width: 975px) {
+      margin-top: 20px;
+   }
+   @media (max-width: 1400px) {
+      flex-direction: column;
+      // width: calc(100% - 40px);
    }
 }

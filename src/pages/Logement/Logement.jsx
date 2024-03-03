@@ -60,11 +60,23 @@ function Logement() {
                className
                title="Description"
                hiddenContent={selectedLogement.description}
+               style1={styles.LogementMenuWrapper}
+               style2={styles.LogementMenuButton}
+               style3={styles.LogementMenuTagName}
+               style4={styles.LogementMenuTagArrow}
+               style5={styles.LogementAproposHiddenContent}
             />
             <Collapse
                className={styles.LogementMenuWrapper}
                title="Equipements"
-               hiddenContent={selectedLogement.equipments}
+               hiddenContent={selectedLogement.equipments.map((value) => (
+                  <div>{value}</div>
+               ))}
+               style1={styles.LogementMenuWrapper}
+               style2={styles.LogementMenuButton}
+               style3={styles.LogementMenuTagName}
+               style4={styles.LogementMenuTagArrow}
+               style5={styles.LogementAproposHiddenContent}
             />
          </div>
       </div>

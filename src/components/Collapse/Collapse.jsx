@@ -1,30 +1,23 @@
 // import "./Collapse.scss";
 import ArrowBack from "../../assets/arrowBack.png";
 import { useState } from "react";
-import styles from "../../components/styles.module.scss";
+// import styles from "../../components/styles.module.scss";
 
 function Collapse({
    id,
    title,
    hiddenContent,
-   // style1,
-   // style2,
-   // style3,
-   // style4,
-   // style5,
+   style1,
+   style2,
+   style3,
+   style4,
+   style5,
 }) {
    const [isShown, setIsShown] = useState(false);
 
    function showHidden() {
       setIsShown(!isShown);
    }
-
-   let style1 = styles.MenuWrapper;
-   let style2 = styles.MenuButton;
-   let style3 = styles.MenuTagName;
-   let style4 = styles.MenuTagArrow;
-   let style5 = styles.AproposHiddenContent;
-
    return (
       <div key={id} className={style1}>
          <div key={id} id={id} className={style2}>
