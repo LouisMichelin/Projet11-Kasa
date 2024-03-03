@@ -1,10 +1,9 @@
 import "./Logement.scss";
-// import styles from "../../components/styles.module.scss";
 import ListeLogements from "../../data/logements";
-import Carrousel from "../../components/Carrousel/Carrousel";
-import Renseignements from "../../components/Renseignements/Renseignements";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import Carrousel from "../../components/Carrousel/Carrousel";
+import Renseignements from "../../components/Renseignements/Renseignements";
 import Host from "../../components/Host/Host";
 import Collapse from "../../components/Collapse/Collapse";
 
@@ -34,6 +33,7 @@ function Logement() {
             totalImg={lastImg}
             toggleArrowLeft={() => handleClickLeft()}
             toggleArrowRight={() => handleClickRight()}
+            // cle={selectedLogement.id}
          />
          <div className="LogementExplications">
             <Renseignements
@@ -47,6 +47,7 @@ function Logement() {
                   nomPrenom={selectedLogement.host.name}
                   hostPhotoSrc={selectedLogement.host.picture}
                   rating={selectedLogement.rating}
+                  cle={selectedLogement.id}
                />
             </div>
          </div>

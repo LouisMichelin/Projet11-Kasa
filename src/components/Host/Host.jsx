@@ -15,11 +15,21 @@ function Host({ nomPrenom, hostPhotoSrc, rating }) {
             />
          </div>
          <div className="HostRating">
-            {evaluation.map((note) =>
+            {evaluation.map((note, cle) =>
                note <= rating ? (
-                  <img className="HostStars" src={StarActive} alt="Rating" />
+                  <img
+                     key={cle}
+                     className="HostStars"
+                     src={StarActive}
+                     alt="Rating"
+                  />
                ) : (
-                  <img className="HostStars" src={StarInactive} alt="Rating" />
+                  <img
+                     key={cle}
+                     className="HostStars"
+                     src={StarInactive}
+                     alt="Rating"
+                  />
                )
             )}
          </div>
