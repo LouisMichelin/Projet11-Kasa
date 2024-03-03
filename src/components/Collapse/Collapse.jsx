@@ -16,7 +16,17 @@ function Collapse({ id, title, hiddenContent }) {
                className="MenuTagArrow"
                alt="Flèche vers le haut"
                src={ArrowBack}
-               style={isShown ? { transform: "rotate(180deg)" } : null}
+               style={
+                  isShown
+                     ? {
+                          transform: "rotate(180deg)",
+                          transition: "transform 400ms ease",
+                       }
+                     : {
+                          transform: "rotate(0deg)",
+                          transition: "transform 400ms ease",
+                       }
+               }
                onClick={showHidden}
             />
          </div>

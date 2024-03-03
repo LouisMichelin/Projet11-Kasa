@@ -6,15 +6,25 @@ import { aboutList } from "../../data/apropos";
 
 function Propos() {
    return (
-      <div className="ProposWrapper">
+      <div className="AllProposContainer">
+         {/* <div className="ProposWrapper"> */}
          <BannerImage
+            className="ProposBanner"
             imageSrc={ImageApropos}
             imageAlt="Banner à propos"
             text=""
          />
-         {aboutList.map(({ id, title, content }) => (
-            <Collapse id={id} key={id} title={title} hiddenContent={content} />
-         ))}
+         {/* </div> */}
+         <div className="ProposCollapsesContainer">
+            {aboutList.map(({ id, title, content }) => (
+               <Collapse
+                  id={id}
+                  key={id}
+                  title={title}
+                  hiddenContent={content}
+               />
+            ))}
+         </div>
       </div>
    );
 }

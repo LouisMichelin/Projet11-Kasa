@@ -1,13 +1,28 @@
+@keyframes fade {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
 .MenuWrapper {
+   width: 100%;
    display: flex;
    flex-direction: column;
-   width: 100%;
+   margin-bottom: 30px;
+   min-width: 450px;
+   @media (max-width: 700px) {
+      min-width: 100%;
+      margin-bottom: 20px;
+   }
+   @media (max-width: 975px) {
+   }
 }
 .MenuButton {
    border: 0;
    border-radius: 5px;
    padding: 0 10px;
-   // margin: 30px 0px 0px 0px;
    height: 50px;
    display: flex;
    justify-content: space-between;
@@ -15,20 +30,19 @@
    background-color: #ff6060;
    color: white;
    font-weight: 700;
-   @media (max-width: 975px) {
-      margin: 20px 0px 0px 0px;
+   @media (max-width: 700px) {
       height: 30px;
    }
 }
 .MenuTagName {
    font-weight: 700;
    font-size: 24px;
-   @media (max-width: 975px) {
+   @media (max-width: 700px) {
       font-size: 13px;
    }
 }
 .MenuTagArrow {
-   @media (max-width: 975px) {
+   @media (max-width: 700px) {
       width: 16px;
    }
 }
@@ -36,19 +50,17 @@
    cursor: pointer;
 }
 .AproposHiddenContent {
-   padding: 10px 15px 10px 20px;
-   line-height: 1.5;
-   align-items: center;
-   border-radius: 5px;
-   min-height: 75px;
+   animation: fade 0.5s ease-in;
    background-color: #f6f6f671;
    display: flex;
    justify-content: left;
-   margin: 0px 100px;
+   align-items: center;
    text-align: left;
-   // padding: 0px 10px;
-   @media (max-width: 975px) {
-      margin: 0;
+   padding: 10px 15px 10px 20px;
+   line-height: 1.5;
+   border-radius: 5px;
+   min-height: 75px;
+   @media (max-width: 700px) {
       font-size: 13px;
    }
 }

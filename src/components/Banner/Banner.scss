@@ -4,18 +4,19 @@
    justify-content: center;
    height: 223px;
    width: 100%;
-   @media (max-width: 1040px) {
+   margin-bottom: 40px;
+   @media (max-width: 700px) {
       height: 111px;
+      margin-bottom: 20px;
    }
 }
 .BannerImage {
    width: 100%;
-   max-height: 223px;
+   height: 100%;
    display: flex;
    object-fit: cover;
    border-radius: 25px;
-   @media (max-width: 1040px) {
-      max-height: 111px;
+   @media (max-width: 700px) {
       border-radius: 10px;
    }
 }
@@ -40,10 +41,10 @@
       width: calc(100% - 65px);
       padding-right: 45px;
       text-align: left;
-   }
-   @media (max-width: 1040px) {
       height: 71px;
       border-radius: 10px;
+   }
+   @media (max-width: 730px) {
       font-size: 24px;
    }
 }
