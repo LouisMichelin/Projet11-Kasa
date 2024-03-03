@@ -1,5 +1,5 @@
 import "./Logement.scss";
-import styles from "../../components/styles.module.scss";
+// import styles from "../../components/styles.module.scss";
 import ListeLogements from "../../data/logements";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Renseignements from "../../components/Renseignements/Renseignements";
@@ -9,16 +9,11 @@ import Host from "../../components/Host/Host";
 import Collapse from "../../components/Collapse/Collapse";
 
 function Logement() {
-   // style1 = styles.LogementMenuWrapper;
-   // style2 = styles.LogementMenuButton;
-   // style3 = styles.LogementMenuTagName;
-   // style4 = styles.LogementMenuTagArrow;
-   // style5 = styles.LogementAproposHiddenContent;
-
-   const { index } = useParams();
+   const { id } = useParams();
    const [currentIndex, setCurrentIndex] = useState(0);
-   let lastImg = parseInt(ListeLogements[index].pictures.length);
-   let selectedLogement = ListeLogements[index];
+   let logement = ListeLogements.find((element) => element.id === id);
+   let lastImg = parseInt(logement.pictures.length);
+   let selectedLogement = logement;
 
    function handleClickLeft() {
       if (currentIndex > 0) {
@@ -57,26 +52,14 @@ function Logement() {
          </div>
          <div className="LogementCollapses">
             <Collapse
-               className
+               className={"test"}
                title="Description"
                hiddenContent={selectedLogement.description}
-               style1={styles.LogementMenuWrapper}
-               style2={styles.LogementMenuButton}
-               style3={styles.LogementMenuTagName}
-               style4={styles.LogementMenuTagArrow}
-               style5={styles.LogementAproposHiddenContent}
             />
             <Collapse
-               className={styles.LogementMenuWrapper}
                title="Equipements"
-               hiddenContent={selectedLogement.equipments.map((value) => (
-                  <div>{value}</div>
-               ))}
-               style1={styles.LogementMenuWrapper}
-               style2={styles.LogementMenuButton}
-               style3={styles.LogementMenuTagName}
-               style4={styles.LogementMenuTagArrow}
-               style5={styles.LogementAproposHiddenContent}
+               hiddenContent={selectedLogement.equipments}
+               className={"test"}
             />
          </div>
       </div>

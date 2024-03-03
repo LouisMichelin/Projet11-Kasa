@@ -29,12 +29,10 @@
 }
 
 .LogementCollapses {
-   // background-color: yellow;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   // align-items: center;
-   width: calc(100% - 200px);
+   // width: calc(100% - 200px);
    margin: 10px 0px 50px 0px;
    // margin-top: 25px;
    @media (max-width: 700px) {
@@ -48,4 +46,9 @@
       flex-direction: column;
       // width: calc(100% - 40px);
    }
+}
+
+.test {
+   width: 75%;
+   background-color: cyan;
 }

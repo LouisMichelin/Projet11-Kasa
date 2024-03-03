@@ -13,13 +13,13 @@ function Home() {
             text="Chez-vous, partout et ailleurs"
          />
          <div className="CardWrapper">
-            {ListeLogements.map(({ id, title, cover }, index) => (
+            {ListeLogements.map(({ id, title, cover }) => (
                <Card
                   key={id}
                   title={title}
                   cardImageAlt={title}
                   cardImageSrc={cover}
-                  pageIndex={`/logement/${index}`}
+                  pageIndex={`/logement/${id}`}
                />
             ))}
          </div>
