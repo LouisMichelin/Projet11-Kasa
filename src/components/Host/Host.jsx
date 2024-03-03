@@ -3,6 +3,7 @@ import StarActive from "../../assets/starActive.png";
 import StarInactive from "../../assets/starInactive.png";
 
 function Host({ nomPrenom, hostPhotoSrc, rating }) {
+   const evaluation = [1, 2, 3, 4, 5];
    return (
       <>
          <div className="HostProfile">
@@ -14,31 +15,13 @@ function Host({ nomPrenom, hostPhotoSrc, rating }) {
             />
          </div>
          <div className="HostRating">
-            <img
-               className="HostStars"
-               src={rating >= 1 ? StarActive : StarInactive}
-               alt="Rating"
-            />
-            <img
-               className="HostStars"
-               src={rating >= 2 ? StarActive : StarInactive}
-               alt="Rating"
-            />
-            <img
-               className="HostStars"
-               src={rating >= 3 ? StarActive : StarInactive}
-               alt="Rating"
-            />
-            <img
-               className="HostStars"
-               src={rating >= 4 ? StarActive : StarInactive}
-               alt="Rating"
-            />
-            <img
-               className="HostStars"
-               src={rating >= 5 ? StarActive : StarInactive}
-               alt="Rating"
-            />
+            {evaluation.map((note) =>
+               note <= rating ? (
+                  <img className="HostStars" src={StarActive} alt="Rating" />
+               ) : (
+                  <img className="HostStars" src={StarInactive} alt="Rating" />
+               )
+            )}
          </div>
       </>
    );
