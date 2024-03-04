@@ -1,7 +1,7 @@
 import "./Logement.scss";
 import ListeLogements from "../../data/logements";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Renseignements from "../../components/Renseignements/Renseignements";
 import Host from "../../components/Host/Host";
@@ -13,7 +13,6 @@ function Logement() {
    let logement = ListeLogements.find((element) => element.id === id);
    let lastImg = parseInt(logement.pictures.length);
    let selectedLogement = logement;
-
    function handleClickLeft() {
       if (currentIndex > 0) {
          return setCurrentIndex(currentIndex - 1);
@@ -25,8 +24,28 @@ function Logement() {
       }
    }
 
+   const [windowSize, setWindowSize] = useState(getWindowSize());
+
+   useEffect(() => {
+      function handleWindowResize() {
+         setWindowSize(getWindowSize());
+      }
+
+      window.addEventListener("resize", handleWindowResize);
+
+      return () => {
+         window.removeEventListener("resize", handleWindowResize);
+      };
+   }, []);
+
+   function getWindowSize() {
+      const { innerWidth } = window;
+      return { innerWidth };
+   }
+
    return (
       <div className="LogementWrapper" key={selectedLogement.id}>
+         <div>{windowSize.innerWidth}</div>
          <Carrousel
             carrouselImgSrc={selectedLogement.pictures[currentIndex]}
             selectedImg={currentIndex + 1}
@@ -53,14 +72,32 @@ function Logement() {
          </div>
          <div className="LogementCollapses">
             <Collapse
-               className={"test"}
+               menuWrapperClass={
+                  windowSize.innerWidth > 1000
+                     ? "LogementConditionnalCollapse"
+                     : "MenuWrapper"
+               }
+               // menuWrapperClass={
+               //    windowWidth.current > 700
+               //       ? "LogementConditonnalCollapse"
+               //       : "MenuWrapper"
+               // }
                title="Description"
                hiddenContent={selectedLogement.description}
             />
             <Collapse
+               menuWrapperClass={
+                  windowSize.innerWidth > 1000
+                     ? "LogementConditionnalCollapse"
+                     : "MenuWrapper"
+               }
+               // menuWrapperClass={
+               //    windowWidth.current > 700
+               //       ? "LogementConditonnalCollapse"
+               //       : "MenuWrapper"
+               // }
                title="Equipements"
                hiddenContent={selectedLogement.equipments}
-               className={"test"}
             />
          </div>
       </div>

@@ -2,14 +2,13 @@ import "./Collapse.scss";
 import ArrowBack from "../../assets/arrowBack.png";
 import { useState } from "react";
 
-function Collapse({ id, title, hiddenContent }) {
+function Collapse({ id, title, hiddenContent, menuWrapperClass }) {
    const [isShown, setIsShown] = useState(false);
-
    function showHidden() {
       setIsShown(!isShown);
    }
    return (
-      <div key={id} className="MenuWrapper">
+      <div key={id} className={menuWrapperClass}>
          <div key={id} id={id} className="MenuButton">
             <div className="MenuTagName">{title}</div>
             <img
