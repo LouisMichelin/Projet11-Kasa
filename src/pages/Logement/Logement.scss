@@ -21,7 +21,8 @@
    flex-direction: column;
    margin-top: 5px;
    @media (max-width: 870px) {
-      margin-top: 20px;
+      margin-top: 10px;
+      margin-bottom: 5px;
       align-items: center;
       flex-direction: row-reverse;
       justify-content: space-between;

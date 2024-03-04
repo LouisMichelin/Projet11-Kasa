@@ -22,6 +22,7 @@ function Propos() {
                   key={id}
                   title={title}
                   hiddenContent={content}
+                  menuWrapperClass={"MenuWrapper"}
                />
             ))}
          </div>

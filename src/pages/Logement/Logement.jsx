@@ -1,13 +1,14 @@
 import "./Logement.scss";
 import ListeLogements from "../../data/logements";
 import { useParams } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Renseignements from "../../components/Renseignements/Renseignements";
 import Host from "../../components/Host/Host";
 import Collapse from "../../components/Collapse/Collapse";
 
 function Logement() {
+   // Setup relatif aux logements
    const { id } = useParams();
    const [currentIndex, setCurrentIndex] = useState(0);
    let logement = ListeLogements.find((element) => element.id === id);
@@ -23,21 +24,17 @@ function Logement() {
          return setCurrentIndex(currentIndex + 1);
       }
    }
-
+   // Setup des dimensions conditionnelles de la page
    const [windowSize, setWindowSize] = useState(getWindowSize());
-
    useEffect(() => {
       function handleWindowResize() {
          setWindowSize(getWindowSize());
       }
-
       window.addEventListener("resize", handleWindowResize);
-
       return () => {
          window.removeEventListener("resize", handleWindowResize);
       };
    }, []);
-
    function getWindowSize() {
       const { innerWidth } = window;
       return { innerWidth };
@@ -45,7 +42,7 @@ function Logement() {
 
    return (
       <div className="LogementWrapper" key={selectedLogement.id}>
-         <div>{windowSize.innerWidth}</div>
+         {/* <div>{windowSize.innerWidth}</div> */}
          <Carrousel
             carrouselImgSrc={selectedLogement.pictures[currentIndex]}
             selectedImg={currentIndex + 1}
@@ -77,11 +74,6 @@ function Logement() {
                      ? "LogementConditionnalCollapse"
                      : "MenuWrapper"
                }
-               // menuWrapperClass={
-               //    windowWidth.current > 700
-               //       ? "LogementConditonnalCollapse"
-               //       : "MenuWrapper"
-               // }
                title="Description"
                hiddenContent={selectedLogement.description}
             />
@@ -91,11 +83,6 @@ function Logement() {
                      ? "LogementConditionnalCollapse"
                      : "MenuWrapper"
                }
-               // menuWrapperClass={
-               //    windowWidth.current > 700
-               //       ? "LogementConditonnalCollapse"
-               //       : "MenuWrapper"
-               // }
                title="Equipements"
                hiddenContent={selectedLogement.equipments}
             />
