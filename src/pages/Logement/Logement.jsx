@@ -85,6 +85,11 @@ function Logement() {
                }
                title="Equipements"
                hiddenContent={selectedLogement.equipments}
+               hiddenStyle={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "baseline",
+               }}
             />
          </div>
       </div>
