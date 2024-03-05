@@ -8,7 +8,7 @@ import Host from "../../components/Host/Host";
 import Collapse from "../../components/Collapse/Collapse";
 
 function Logement() {
-   // Setup relatif aux logements
+   // Setup Logements
    const { id } = useParams();
    const [currentIndex, setCurrentIndex] = useState(0);
    let logement = ListeLogements.find((element) => element.id === id);
@@ -24,7 +24,7 @@ function Logement() {
          return setCurrentIndex(currentIndex + 1);
       }
    }
-   // Setup des dimensions conditionnelles de la page
+   // Setup Window-size
    const [windowSize, setWindowSize] = useState(getWindowSize());
    useEffect(() => {
       function handleWindowResize() {
@@ -42,14 +42,12 @@ function Logement() {
 
    return (
       <div className="LogementWrapper" key={selectedLogement.id}>
-         {/* <div>{windowSize.innerWidth}</div> */}
          <Carrousel
             carrouselImgSrc={selectedLogement.pictures[currentIndex]}
             selectedImg={currentIndex + 1}
             totalImg={lastImg}
             toggleArrowLeft={() => handleClickLeft()}
             toggleArrowRight={() => handleClickRight()}
-            // cle={selectedLogement.id}
          />
          <div className="LogementExplications">
             <Renseignements
@@ -90,6 +88,7 @@ function Logement() {
                   flexDirection: "column",
                   alignItems: "baseline",
                }}
+               id={id}
             />
          </div>
       </div>

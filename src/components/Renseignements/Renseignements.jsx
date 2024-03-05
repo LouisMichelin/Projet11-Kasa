@@ -1,6 +1,6 @@
 import "./Renseignements.scss";
 
-function Renseignements({ logementTitle, logementLocation, allTags, cle }) {
+function Renseignements({ logementTitle, logementLocation, allTags }) {
    return (
       <div className="RenseignementsWrapper">
          <div className="RenseignementTitle">{logementTitle}</div>

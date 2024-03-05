@@ -9,13 +9,12 @@
       margin: 20px 19.5px;
    }
 }
-
 .CardWrapper {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
    border-radius: 25px;
-   margin: 40px 100px 0px 100px;
+   margin: 10px 100px 0px 100px;
    background-color: #f6f6f6;
    width: calc(100% - 50px);
    height: auto;
@@ -24,6 +23,6 @@
       background-color: #ffffff;
       padding: 0;
       width: 100%;
-      margin: 10px 20px 0px 20px;
+      margin: 0px 20px 0px 20px;
    }
 }

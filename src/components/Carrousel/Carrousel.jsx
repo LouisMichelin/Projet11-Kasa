@@ -8,10 +8,9 @@ function Carrousel({
    totalImg,
    toggleArrowLeft,
    toggleArrowRight,
-   cle,
 }) {
    return (
-      <div className="CarrouselWrapper" key={cle}>
+      <div className="CarrouselWrapper">
          {totalImg > 1 && (
             <img
                className="CarrouselArrowLeft"

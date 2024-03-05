@@ -7,14 +7,12 @@ import { aboutList } from "../../data/apropos";
 function Propos() {
    return (
       <div className="AllProposContainer">
-         {/* <div className="ProposWrapper"> */}
          <BannerImage
             className="ProposBanner"
             imageSrc={ImageApropos}
             imageAlt="Banner à propos"
             text=""
          />
-         {/* </div> */}
          <div className="ProposCollapsesContainer">
             {aboutList.map(({ id, title, content }) => (
                <Collapse
