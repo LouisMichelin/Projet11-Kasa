@@ -15,12 +15,16 @@ function Logement() {
    let lastImg = parseInt(logement.pictures.length);
    let selectedLogement = logement;
    function handleClickLeft() {
-      if (currentIndex > 0) {
+      if (currentIndex === 0) {
+         return setCurrentIndex(lastImg - 1);
+      } else {
          return setCurrentIndex(currentIndex - 1);
       }
    }
    function handleClickRight() {
-      if (currentIndex < lastImg - 1) {
+      if (currentIndex === lastImg - 1) {
+         return setCurrentIndex(0);
+      } else {
          return setCurrentIndex(currentIndex + 1);
       }
    }
