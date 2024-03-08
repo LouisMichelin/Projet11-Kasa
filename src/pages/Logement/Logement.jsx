@@ -1,6 +1,6 @@
 import "./Logement.scss";
 import ListeLogements from "../../data/logements";
-import { useParams } from "react-router-dom";
+import { useParams, redirect, Navigate, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Renseignements from "../../components/Renseignements/Renseignements";
@@ -10,10 +10,26 @@ import Collapse from "../../components/Collapse/Collapse";
 function Logement() {
    // Setup Logements
    const { id } = useParams();
-   const [currentIndex, setCurrentIndex] = useState(0);
    let logement = ListeLogements.find((element) => element.id === id);
+
+   const [currentIndex, setCurrentIndex] = useState(0); // INDEX DU CARROUSEL
+   // let logement = ListeLogements.find((element) => element.id === id);
    let lastImg = parseInt(logement.pictures.length);
    let selectedLogement = logement;
+   ////////////////////////////////////////////////////
+   // console.log("{id} : ", { id });
+   // console.log("id : ", id);
+   // console.log("{id}.id : ", { id }.id);
+   ////////////////////////////////////////////////////
+   // const test123 = 1;
+   // if (test123 === 1) {
+   //    console.log("111111111");
+   //    redirect("*");
+   // } else if (test123 === 2) {
+   //    console.log("222222222");
+   // }
+   ////////////////////////////////////////////////////
+
    function handleClickLeft() {
       if (currentIndex === 0) {
          return setCurrentIndex(lastImg - 1);
