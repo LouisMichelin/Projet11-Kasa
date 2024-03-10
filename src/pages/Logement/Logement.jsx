@@ -43,12 +43,12 @@ function Logement() {
                </div>
                <div className="LogementCollapses">
                   <Collapse
-                     menuWrapperClass={"MenuWrapper"}
+                     menuWrapperClass="MenuWrapper"
                      title="Description"
                      hiddenContent={selectedLogement.description}
                   />
                   <Collapse
-                     menuWrapperClass={"MenuWrapper"}
+                     menuWrapperClass="MenuWrapper"
                      title="Equipements"
                      hiddenContent={selectedLogement.equipments}
                      hiddenStyle={{
