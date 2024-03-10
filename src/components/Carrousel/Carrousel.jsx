@@ -1,39 +1,54 @@
 import "./Carrousel.scss";
 import ArrowLeft from "../../assets/arrowLeft.png";
 import ArrowRight from "../../assets/arrowRight.png";
+import { useState } from "react";
 
-function Carrousel({
-   carrouselImgSrc,
-   selectedImg,
-   totalImg,
-   toggleArrowLeft,
-   toggleArrowRight,
-}) {
+function Carrousel({ carrouselImgSrc }) {
+   const [currentIndex, setCurrentIndex] = useState(0); // INDEX DU CARROUSEL
+   const carrouselLength = carrouselImgSrc.length;
+
+   function handleClickLeft() {
+      if (currentIndex === 0) {
+         return setCurrentIndex(carrouselLength - 1);
+      } else {
+         return setCurrentIndex(currentIndex - 1);
+      }
+   }
+   function handleClickRight() {
+      if (currentIndex === carrouselLength - 1) {
+         return setCurrentIndex(0);
+      } else {
+         return setCurrentIndex(currentIndex + 1);
+      }
+   }
+
    return (
       <div className="CarrouselWrapper">
-         {totalImg > 1 && (
+         {carrouselLength > 1 && (
             <img
                className="CarrouselArrowLeft"
                src={ArrowLeft}
                alt="Flèche directionnelle Gauche"
-               onClick={() => toggleArrowLeft()}
+               onClick={() => handleClickLeft()}
             />
          )}
          <img
             className="CarrouselImage"
-            src={carrouselImgSrc}
+            src={carrouselImgSrc[currentIndex]}
             alt="Carrousel"
          />
-         {totalImg > 1 && (
+         {carrouselLength > 1 && (
             <img
                className="CarrouselArrowRight"
                src={ArrowRight}
                alt="Flèche directionnelle Droite"
-               onClick={() => toggleArrowRight()}
+               onClick={() => handleClickRight()}
             />
          )}
-         {totalImg > 1 && (
-            <div className="CarrouselCompteur">{`${selectedImg}/${totalImg}`}</div>
+         {carrouselLength > 1 && (
+            <div className="CarrouselCompteur">{`${
+               currentIndex + 1
+            }/${carrouselLength}`}</div>
          )}
       </div>
    );

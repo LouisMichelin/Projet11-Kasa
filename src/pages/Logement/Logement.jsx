@@ -1,6 +1,6 @@
 import "./Logement.scss";
 import ListeLogements from "../../data/logements";
-import { useParams, redirect, Navigate, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Renseignements from "../../components/Renseignements/Renseignements";
@@ -8,110 +8,62 @@ import Host from "../../components/Host/Host";
 import Collapse from "../../components/Collapse/Collapse";
 
 function Logement() {
-   // Setup Logements
    const { id } = useParams();
-   let logement = ListeLogements.find((element) => element.id === id);
+   const [selectedLogement, setSelectedLogement] = useState(null);
+   let navigate = useNavigate();
 
-   const [currentIndex, setCurrentIndex] = useState(0); // INDEX DU CARROUSEL
-   // let logement = ListeLogements.find((element) => element.id === id);
-   let lastImg = parseInt(logement.pictures.length);
-   let selectedLogement = logement;
-   ////////////////////////////////////////////////////
-   // console.log("{id} : ", { id });
-   // console.log("id : ", id);
-   // console.log("{id}.id : ", { id }.id);
-   ////////////////////////////////////////////////////
-   // const test123 = 1;
-   // if (test123 === 1) {
-   //    console.log("111111111");
-   //    redirect("*");
-   // } else if (test123 === 2) {
-   //    console.log("222222222");
-   // }
-   ////////////////////////////////////////////////////
-
-   function handleClickLeft() {
-      if (currentIndex === 0) {
-         return setCurrentIndex(lastImg - 1);
-      } else {
-         return setCurrentIndex(currentIndex - 1);
-      }
-   }
-   function handleClickRight() {
-      if (currentIndex === lastImg - 1) {
-         return setCurrentIndex(0);
-      } else {
-         return setCurrentIndex(currentIndex + 1);
-      }
-   }
-   // Setup Window-size
-   const [windowSize, setWindowSize] = useState(getWindowSize());
    useEffect(() => {
-      function handleWindowResize() {
-         setWindowSize(getWindowSize());
+      let data = ListeLogements.find((element) => element.id === id);
+      if (data == null) {
+         navigate("/*");
       }
-      window.addEventListener("resize", handleWindowResize);
-      return () => {
-         window.removeEventListener("resize", handleWindowResize);
-      };
-   }, []);
-   function getWindowSize() {
-      const { innerWidth } = window;
-      return { innerWidth };
-   }
+      setSelectedLogement(data);
+   }, [id, navigate]);
 
    return (
-      <div className="LogementWrapper" key={selectedLogement.id}>
-         <Carrousel
-            carrouselImgSrc={selectedLogement.pictures[currentIndex]}
-            selectedImg={currentIndex + 1}
-            totalImg={lastImg}
-            toggleArrowLeft={() => handleClickLeft()}
-            toggleArrowRight={() => handleClickRight()}
-         />
-         <div className="LogementExplications">
-            <Renseignements
-               logementTitle={selectedLogement.title}
-               logementLocation={selectedLogement.location}
-               allTags={selectedLogement.tags}
-               cle={selectedLogement.id}
-            />
-            <div className="LogementHost">
-               <Host
-                  nomPrenom={selectedLogement.host.name}
-                  hostPhotoSrc={selectedLogement.host.picture}
-                  rating={selectedLogement.rating}
-                  cle={selectedLogement.id}
-               />
+      <>
+         {selectedLogement !== null ? (
+            <div className="LogementWrapper" key={selectedLogement.id}>
+               <Carrousel carrouselImgSrc={selectedLogement.pictures} />
+               <div className="LogementExplications">
+                  <Renseignements
+                     logementTitle={selectedLogement.title}
+                     logementLocation={selectedLogement.location}
+                     allTags={selectedLogement.tags}
+                     cle={selectedLogement.id}
+                  />
+                  <div className="LogementHost">
+                     <Host
+                        nomPrenom={selectedLogement.host.name}
+                        hostPhotoSrc={selectedLogement.host.picture}
+                        rating={selectedLogement.rating}
+                        cle={selectedLogement.id}
+                     />
+                  </div>
+               </div>
+               <div className="LogementCollapses">
+                  <Collapse
+                     menuWrapperClass={"MenuWrapper"}
+                     title="Description"
+                     hiddenContent={selectedLogement.description}
+                  />
+                  <Collapse
+                     menuWrapperClass={"MenuWrapper"}
+                     title="Equipements"
+                     hiddenContent={selectedLogement.equipments}
+                     hiddenStyle={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "baseline",
+                     }}
+                     id={id}
+                  />
+               </div>
             </div>
-         </div>
-         <div className="LogementCollapses">
-            <Collapse
-               menuWrapperClass={
-                  windowSize.innerWidth > 1000
-                     ? "LogementConditionnalCollapse"
-                     : "MenuWrapper"
-               }
-               title="Description"
-               hiddenContent={selectedLogement.description}
-            />
-            <Collapse
-               menuWrapperClass={
-                  windowSize.innerWidth > 1000
-                     ? "LogementConditionnalCollapse"
-                     : "MenuWrapper"
-               }
-               title="Equipements"
-               hiddenContent={selectedLogement.equipments}
-               hiddenStyle={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "baseline",
-               }}
-               id={id}
-            />
-         </div>
-      </div>
+         ) : (
+            ""
+         )}
+      </>
    );
 }
 
