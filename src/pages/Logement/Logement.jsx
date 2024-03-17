@@ -22,7 +22,7 @@ function Logement() {
 
    return (
       <>
-         {selectedLogement !== null ? (
+         {selectedLogement !== null && (
             <div className="LogementWrapper" key={selectedLogement.id}>
                <Carrousel carrouselImgSrc={selectedLogement.pictures} />
                <div className="LogementExplications">
@@ -60,8 +60,6 @@ function Logement() {
                   />
                </div>
             </div>
-         ) : (
-            ""
          )}
       </>
    );
