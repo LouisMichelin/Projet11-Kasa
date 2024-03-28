@@ -2,7 +2,7 @@ import "./Collapse.scss";
 import ArrowBack from "../../assets/arrowBack.png";
 import { useState } from "react";
 
-function Collapse({ title, hiddenContent, hiddenStyle }) {
+function Collapse({ title, hiddenContent }) {
    const [isShown, setIsShown] = useState(false);
    function showHidden() {
       setIsShown(!isShown);
@@ -30,13 +30,15 @@ function Collapse({ title, hiddenContent, hiddenStyle }) {
             />
          </div>
          {isShown ? (
-            <div className="AproposHiddenContent" style={hiddenStyle}>
+            <div className="AproposHiddenContent">
                {hiddenContent.map ? (
-                  hiddenContent.map((element, id) => (
-                     <span key={id}>{element}</span>
-                  ))
+                  <ul className="HiddenListing">
+                     {hiddenContent.map((element, id) => (
+                        <li key={id}>{element}</li>
+                     ))}
+                  </ul>
                ) : (
-                  <div>{hiddenContent}</div>
+                  <p>{hiddenContent}</p>
                )}
             </div>
          ) : null}

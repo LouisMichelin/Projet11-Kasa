@@ -43,20 +43,16 @@ function Logement() {
                </div>
                <div className="LogementCollapses">
                   <Collapse
+                     id={id}
                      menuWrapperClass="MenuWrapper"
                      title="Description"
                      hiddenContent={selectedLogement.description}
                   />
                   <Collapse
+                     id={id}
                      menuWrapperClass="MenuWrapper"
                      title="Equipements"
                      hiddenContent={selectedLogement.equipments}
-                     hiddenStyle={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "baseline",
-                     }}
-                     id={id}
                   />
                </div>
             </div>

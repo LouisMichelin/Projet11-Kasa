@@ -52,13 +52,18 @@
    background-color: #f6f6f671;
    display: flex;
    justify-content: left;
-   align-items: center;
    text-align: left;
-   padding: 10px 15px 10px 20px;
+   flex-direction: column;
+   padding: 0px 15px 0px 20px;
    line-height: 1.5;
    border-radius: 5px;
-   min-height: 75px;
+   min-height: 50px;
    @media (max-width: 700px) {
       font-size: 13px;
    }
+}
+.HiddenListing {
+   margin: 0;
+   padding: 10px 0px;
+   list-style: none;
 }
