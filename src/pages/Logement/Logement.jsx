@@ -15,7 +15,7 @@ function Logement() {
    useEffect(() => {
       let data = ListeLogements.find((element) => element.id === id);
       if (data == null) {
-         navigate("/*");
+         navigate("/error");
       }
       setSelectedLogement(data);
    }, [id, navigate]);
